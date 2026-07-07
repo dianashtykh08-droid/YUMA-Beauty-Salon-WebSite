@@ -1388,3 +1388,81 @@ select {
     height: auto !important;
   }
 }
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 40px 18px;
+    min-height: auto;
+  }
+
+  .hero-top {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+    letter-spacing: 8px;
+    word-break: keep-all;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .hero-box,
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-img {
+    min-height: 360px;
+  }
+
+  .owner-text {
+    padding: 32px 22px;
+  }
+
+  .section {
+    padding: 45px 18px;
+  }
+
+  .cards,
+  .reviews-grid,
+  .gallery-grid,
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img,
+  .card-img {
+    min-height: 260px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-book-btn {
+    right: 16px;
+    bottom: 16px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
