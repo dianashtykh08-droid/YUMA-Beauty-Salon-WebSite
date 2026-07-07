@@ -2,7 +2,7 @@
 
 A modern and elegant website created for the **YUMA Beauty Salon**.
 
-## ✨ Features
+ ## Features
 
 - Luxury UI design
 - Responsive layout
@@ -16,7 +16,7 @@ A modern and elegant website created for the **YUMA Beauty Salon**.
 - Social media integration
 - Booksy booking
 
-## 🛠️ Technologies
+ ## Technologies
 
 - React
 - Vite
@@ -25,16 +25,16 @@ A modern and elegant website created for the **YUMA Beauty Salon**.
 - CSS3
 - React Icons
 
-## 📱 Responsive
+## Responsive
 
 - Desktop
 - Tablet
 - Mobile
 
-## 🌐 Live Website
+##  Live Website
 
 PASTE_YOUR_VERCEL_LINK_HERE
 
-## 👩‍💻 Author
+##  Author
 
 Created by Diana Shtykh
