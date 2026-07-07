@@ -1,40 +1,102 @@
+<div align="center">
+
 # YUMA Beauty Salon Website
 
-A modern and elegant website created for the **YUMA Beauty Salon**.
+Modern luxury beauty salon website built with React, Vite and JavaScript.
 
- ## Features
+[Live Website](TUTAJ_WKLEJ_LINK_Z_VERCELA) • [Source Code](https://github.com/dianashtykh08-droid/YUMA)
 
-- Luxury UI design
-- Responsive layout
-- React + Vite
-- JavaScript (ES6+)
-- CSS3 animations
+<br>
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+
+</div>
+
+---
+
+## About
+
+YUMA is a modern website created for a real beauty salon.
+
+The project focuses on elegant design, responsive layout and smooth user experience while allowing customers to explore services, browse the gallery and book appointments through Booksy.
+
+---
+
+## Features
+
+- Responsive design
+- Luxury user interface
 - Service search
 - Gallery
 - Customer reviews
-- Google Maps
-- Social media integration
+- Google Maps integration
 - Booksy booking
+- Social media integration
 
- ## Technologies
+---
+
+## Technologies
 
 - React
 - Vite
-- JavaScript
+- JavaScript (ES6)
 - HTML5
 - CSS3
 - React Icons
 
-## Responsive
+---
 
-- Desktop
-- Tablet
-- Mobile
+# Preview
 
-##  Live Website
+> Replace the image below with a screenshot of the homepage.
 
-PASTE_YOUR_VERCEL_LINK_HERE
+![Homepage](screenshots/homepage.png)
 
-##  Author
+---
 
-Created by Diana Shtykh
+# Gallery
+
+| Home | Services |
+|------|----------|
+| ![](screenshots/homepage.png) | ![](screenshots/services.png) |
+
+| Gallery | Contact |
+|---------|----------|
+| ![](screenshots/gallery.png) | ![](screenshots/contact.png) |
+
+---
+
+## Live Demo
+
+https://TWOJ-LINK.vercel.app
+
+---
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## Build
+
+```bash
+npm run build
+```
+
+---
+
+## Author
+
+Diana Shtykh
+
+GitHub:
+https://github.com/dianashtykh08-droid
+
