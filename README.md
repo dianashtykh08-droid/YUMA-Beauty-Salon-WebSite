@@ -72,7 +72,7 @@ The project focuses on elegant design, responsive layout and smooth user experie
 
 ## Live Demo
 
-https://yuma-bice.vercel.app/
+http://yuma-beauty.pl/
 
 ---
 
