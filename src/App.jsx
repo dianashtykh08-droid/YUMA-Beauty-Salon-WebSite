@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import {
   FaInstagram,
@@ -226,6 +226,18 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openService, setOpenService] = useState(null);
+
+  const servicesRef = useRef(null);
+  const reviewsRef = useRef(null);
+  const galleryRef = useRef(null);
+
+  const scrollMobile = (ref, direction) => {
+    ref.current?.scrollBy({
+      left: direction * 320,
+      behavior: "smooth",
+    });
+  };
 
   const filteredSearchItems = searchableItems
     .filter((item) => {
@@ -240,25 +252,27 @@ function App() {
 
   return (
     <div className="app">
-<aside className={`sidebar ${isMenuOpen ? "sidebar-open" : ""}`}>       <button
-  type="button"
-  className="menu-icon"
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
->
-  {isMenuOpen ? <FaTimes /> : "☰"}
-</button>
+      <button
+        type="button"
+        className="mobile-menu-toggle"
+        aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <FaTimes /> : "☰"}
+      </button>
 
+      <aside className={`sidebar ${isMenuOpen ? "sidebar-open" : ""}`}>
         <div className="brand">
           <h2>YUMA</h2>
           <p>Salon kosmetologiczny</p>
         </div>
 
         <nav>
-          <a href="#home">Strona główna</a>
-          <a href="#services">Usługi</a>
-          <a href="#reviews">Opinie</a>
-          <a href="#gallery">Galeria</a>
-          <a href="#contact">Kontakt</a>
+          <a href="#home" onClick={() => setIsMenuOpen(false)}>Strona główna</a>
+          <a href="#services" onClick={() => setIsMenuOpen(false)}>Usługi</a>
+          <a href="#reviews" onClick={() => setIsMenuOpen(false)}>Opinie</a>
+          <a href="#gallery" onClick={() => setIsMenuOpen(false)}>Galeria</a>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>Kontakt</a>
         </nav>
 
         <a href={booksyUrl} target="_blank" rel="noopener noreferrer" className="book-btn">
@@ -277,6 +291,15 @@ function App() {
           </a>
         </div>
       </aside>
+
+      {isMenuOpen && (
+        <button
+          type="button"
+          className="menu-backdrop"
+          aria-label="Zamknij menu"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
 
       <main className="content">
         <section className="hero" id="home">
@@ -388,18 +411,33 @@ function App() {
             aktualnego kalendarza zapisów.
           </p>
 
-          <div className="service-groups">
+          <div className="mobile-slider-header">
+            <button type="button" onClick={() => scrollMobile(servicesRef, -1)}>‹</button>
+            <button type="button" onClick={() => scrollMobile(servicesRef, 1)}>›</button>
+          </div>
+
+          <div className="service-groups mobile-slider" ref={servicesRef}>
             {serviceGroups.map((group) => (
-              <article className="service-group premium-card" key={group.title}>
+              <article
+                className={`service-group premium-card ${openService === group.title ? "service-open" : ""}`}
+                key={group.title}
+              >
                 <div className="service-cover" style={{ backgroundImage: `url(${group.image})` }}>
                   <span>{group.badge}</span>
                 </div>
 
                 <div className="service-content">
-                  <div className="service-title-row">
+                  <button
+                    type="button"
+                    className="service-title-row"
+                    onClick={() =>
+                      setOpenService(openService === group.title ? null : group.title)
+                    }
+                    aria-expanded={openService === group.title}
+                  >
                     <h3>{group.title}</h3>
                     <FaChevronDown />
-                  </div>
+                  </button>
                   <p>{group.summary}</p>
 
                   <div className="service-list">
@@ -434,7 +472,12 @@ function App() {
           <h2>Co mówią klientki</h2>
           <p className="section-lead">Wybrane opinie klientek po wizytach w YUMA.</p>
 
-          <div className="reviews-grid premium-reviews">
+          <div className="mobile-slider-header">
+            <button type="button" onClick={() => scrollMobile(reviewsRef, -1)}>‹</button>
+            <button type="button" onClick={() => scrollMobile(reviewsRef, 1)}>›</button>
+          </div>
+
+          <div className="reviews-grid premium-reviews mobile-slider" ref={reviewsRef}>
             {reviews.map((review) => (
               <article className="review" key={`${review.name}-${review.service}`}>
                 <div className="stars">
@@ -462,7 +505,12 @@ function App() {
             realne efekty pracy oraz detale, które tworzą styl YUMA.
           </p>
 
-          <div className="pinterest-gallery">
+          <div className="mobile-slider-header">
+            <button type="button" onClick={() => scrollMobile(galleryRef, -1)}>‹</button>
+            <button type="button" onClick={() => scrollMobile(galleryRef, 1)}>›</button>
+          </div>
+
+          <div className="pinterest-gallery mobile-slider" ref={galleryRef}>
             {galleryImages.map((image, index) => (
               <button
                 type="button"
