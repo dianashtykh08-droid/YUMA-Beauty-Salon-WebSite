@@ -225,6 +225,7 @@ const searchableItems = serviceGroups.flatMap((group) =>
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const filteredSearchItems = searchableItems
     .filter((item) => {
@@ -239,8 +240,13 @@ function App() {
 
   return (
     <div className="app">
-      <aside className="sidebar">
-        <div className="menu-icon">☰</div>
+<aside className={`sidebar ${isMenuOpen ? "sidebar-open" : ""}`}>       <button
+  type="button"
+  className="menu-icon"
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+>
+  {isMenuOpen ? <FaTimes /> : "☰"}
+</button>
 
         <div className="brand">
           <h2>YUMA</h2>
@@ -248,12 +254,12 @@ function App() {
         </div>
 
         <nav>
-          <a href="#home">Strona główna</a>
-          <a href="#services">Usługi</a>
-          <a href="#reviews">Opinie</a>
-          <a href="#gallery">Galeria</a>
-          <a href="#contact">Kontakt</a>
-        </nav>
+  <a href="#home" onClick={() => setIsMenuOpen(false)}>Strona główna</a>
+  <a href="#services" onClick={() => setIsMenuOpen(false)}>Usługi</a>
+  <a href="#reviews" onClick={() => setIsMenuOpen(false)}>Opinie</a>
+  <a href="#gallery" onClick={() => setIsMenuOpen(false)}>Galeria</a>
+  <a href="#contact" onClick={() => setIsMenuOpen(false)}>Kontakt</a>
+</nav>
 
         <a href={booksyUrl} target="_blank" rel="noopener noreferrer" className="book-btn">
           <FaCalendarAlt /> Zapisz się

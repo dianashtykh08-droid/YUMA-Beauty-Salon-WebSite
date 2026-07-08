@@ -1466,3 +1466,115 @@ select {
     font-size: 14px;
   }
 }
+/* ===== MOBILE CLICK MENU ===== */
+
+.menu-icon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    display: flex;
+    left: -100%;
+    width: 82%;
+    max-width: 340px;
+    padding: 34px 24px;
+  }
+
+  .sidebar.sidebar-open {
+    left: 0;
+  }
+
+  .sidebar:hover {
+    left: -100%;
+  }
+
+  .sidebar.sidebar-open:hover {
+    left: 0;
+  }
+
+  .menu-icon {
+    position: fixed;
+    right: 18px;
+    top: 18px;
+    z-index: 1200;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-soft);
+    background: rgba(8, 5, 3, 0.82);
+    color: var(--gold-light);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 22px rgba(216, 180, 92, 0.22);
+  }
+
+  .brand,
+  .sidebar nav,
+  .book-btn,
+  .social-links {
+    opacity: 1;
+  }
+
+  .brand h2 {
+    font-size: 34px;
+    letter-spacing: 6px;
+  }
+
+  .brand p {
+    font-size: 9px;
+  }
+
+  .sidebar nav {
+    margin-top: 42px;
+    gap: 10px;
+  }
+
+  .sidebar nav a {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .book-btn {
+    margin-top: 22px;
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .book-btn svg {
+    font-size: 15px;
+  }
+
+  .social-links {
+    margin-top: auto;
+    margin-bottom: 18px;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .floating-book-btn {
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    justify-content: center;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+
+  .floating-book-btn svg,
+  .contact-info svg,
+  .stars svg,
+  .search-icon {
+    font-size: 15px;
+  }
+}
+
