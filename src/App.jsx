@@ -212,7 +212,7 @@ const galleryImages = [
   { src: gallery8, title: "Lifting rzęs i brwi", tag: "Rzęsy" },
 ];
 
-const workers = ["Yuliia Dąbrowska", "Magda"];
+const workers = ["Yuliia Dąbrowska"];
 const featuredServices = serviceGroups.flatMap((group) => group.items).slice(0, 9);
 
 const searchableItems = serviceGroups.flatMap((group) =>
